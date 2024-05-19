@@ -303,6 +303,10 @@ section {
   text-align: center;
 }
 
+.details-container li{
+  list-style: none;
+}
+
 .section-container {
   gap: 4rem;
   height: 80%;
@@ -340,6 +344,14 @@ section {
   flex-direction: row;
   gap: 2.5rem;
   justify-content: space-around;
+}
+
+.article-container ul{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding-left: 0;
 }
 
 article {

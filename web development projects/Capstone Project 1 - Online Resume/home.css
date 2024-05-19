@@ -1,0 +1,39 @@
+body{
+    background-image: url('backgroundimage/backgroundimage.jpg');
+    background-size: cover;
+    height: 100vh;
+    background-position: center;
+}
+h1{
+    color: white;
+    font-size: 4em;
+    margin-left: 6%;
+    margin-top: 2%;
+    size: 0cap;
+}
+.image img{
+    border-radius: 5%;
+    width: 20%;
+    float: left;
+    margin-top: 8%;
+    height: 10%;
+    margin-left: 5%;
+    filter: drop-shadow(5px 5px 5px grey);
+}
+.summary{
+    border-radius: 2%;
+    color: white;
+    width: 60%;
+    float: right;
+    margin-top: 10%;
+    padding: 5%;
+    font-size: 2em;
+}
+a{
+    font-size: 20px;
+    float: right;
+    margin-right: 5%;
+    color: white;
+    margin-top: 0%;
+    text-decoration: none;
+}

@@ -1,0 +1,16 @@
+body{
+    background-image: url('aboutbackgroundimage.jpg');
+    background-size: cover;
+    height: 100vh;
+    background-position: center;
+}
+p{
+    font-size: 2em;
+    color: white;
+    padding: 5%;
+}
+h1{
+    color: white;
+    font-size: 500%;
+    text-align: center;
+}

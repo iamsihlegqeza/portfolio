@@ -1,0 +1,15 @@
+body{
+  background-image: url('./contactbackgroundimage.jpg');
+    background-size: cover;
+    height: 100vh;
+    background-position: center;
+}
+.details{
+  margin-top: 15%;
+  margin-left: 40%;
+  color: white;
+  font-size: 2em;
+}
+h1{
+  margin-left: -7%;
+}
