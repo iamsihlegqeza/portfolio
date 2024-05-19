@@ -61,7 +61,12 @@
     }
     .article-container ul{
       display: list-item;
-    } 
+    }
+    a:hover {
+      text-decoration: none;
+      text-underline-offset: none;
+      text-decoration-color: rgb(181, 181, 181);
+    }
     footer nav {
       height: fit-content;
       margin-bottom: 2rem;
