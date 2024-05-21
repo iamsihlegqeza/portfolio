@@ -5,9 +5,20 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Portfolio</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css" />
         <link rel="stylesheet" href="mediaqueries.css" />
+        <style>
+        #dropdown-products {
+          display: none;
+        }
+        
+        #menu-products:hover #dropdown-products {
+          display: block;
+        }
+        </style>
       </head>
       <body>
         <nav id="desktop-nav">
@@ -263,76 +274,56 @@
             onclick="location.href='./#projects'"
           />
         </section>
-        <section id="projects">
-          <p class="section__text__p1">Browse My Recent</p>
-          <h1 class="title">Projects</h1>
-          <div class="experience-details-container">
-            <div class="about-containers">
-              <div class="details-container color-container">
-                <div class="article-container">
-                  <p class="section__text__p1">Coming Soon!</p>
-                  <img
-                    src="./assets/project-1.webp"
-                    alt="Project 1"
-                    class="project-img"
-                  />
+            <p class="section__text__p1">Browse My Recent</p>
+            <h1 class="title">Projects</h1>
+            <div id="myCarousel" class="carousel slide mb-6 pointer-event" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item">
+                  <img src="./assets/incomeandexpenses.jpg" alt="incomeandexpenses" width="100%">
+                  <div class="container">
+                    <div class="carousel-caption text-center">
+                      <h1>Income & Expenses Tracker</h1>
+                      <p style="font-size: larger; color: white;" class="opacity-75">Coming Soon!</p>
+                      <p><a class="btn btn-lg btn-light" href="https://iamsihlegqeza.github.io/income-and-expenses-tracker-preview/">View Site</a></p>
+                    </div>
+                  </div>
                 </div>
-                <h2 class="experience-sub-title project-title">Income & Expenses Tracker</h2>
-                <div class="btn-container">
-                  <button
-                    class="btn btn-color-2 project-btn"
-                    onclick="location.href='https://iamsihlegqeza.github.io/income-and-expenses-tracker-preview/'"
-                  >
-                    View Site
-                  </button>
+                <div class="carousel-item active">
+                  <img src="./assets/tindog.avif" width="100%" alt="tindog image">
+                  <div class="container">
+                    <div class="carousel-caption">
+                      <h1>TinDog</h1>
+                      <p style="font-size: larger; color: white;">Meet new and interesting dogs nearby.</p>
+                      <p><a class="btn btn-lg btn-light" href="https://iamsihlegqeza.github.io/tindog/">View Live</a></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="./assets/learningwebdevelopment.jpg" width="100%" height="-10%" alt="learningwebdevelopment">
+                  <div class="container">
+                    <div class="carousel-caption text-center">
+                      <h1>Learning web Development</h1>
+                      <p style=" color: greenyellow; font-size: larger;">"Don’t let the noise of others’ opinions drown out your own inner voice."
+                       <p style="color: white;"> ― Steve Jobs</p></p>
+                      <p><a class="btn btn-lg btn-light" href="#">Browse</a></p>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="details-container color-container">
-                <div class="article-container">
-                  <h2 class="experience-sub-title project-title">Learning Web Development</h2>
-                  <h6>src: <a href="https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/37368588">https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/37368588</a></h6>
-                    <ul>
-                      <li><a href="web development projects/2.1+Heading+Element/2.1 Heading Element/index.html">Heading & Element</a></li>
-                      <li><a href="web development projects/2.2+Paragraph+Element/2.2 Paragraph Element/index.html">Paragraph & Element</a></li>
-                      <li><a href="web development projects/2.3+Void+Elements/2.3 Void Elements/index.html">Void & Elements</a></li>
-                      <li><a href="web development projects/2.4 Movie Ranking Project/index.html">Movie Ranking Project</a></li>
-                      <li><a href="web development projects/3.0 List Elements/index.html">List Elements</a></li>
-                      <li><a href="web development projects/3.1+Nesting+and+Indentation/3.1 Nesting and Indentation/index.html">Nesting & Indentation</a></li>
-                      <li><a href="web development projects/3.2+Anchor+Elements/3.2 Anchor Elements/index.html">Enchor & Elements</a></li>
-                      <li><a href="web development projects/3.3+Image+Elements/3.3 Image Elements/">Image Elements</a></li>
-                      <li><a href="web development projects/3.4 Birthday Invite Project/index.html">Birthday Invite Project</a></li>
-                      <li><a href="web development projects/4.0 File Paths/Folder0/index.html">File Paths</a></li>
-                      <li><a href="web development projects/4.1+Webpages/index.html">Web Pages</a></li>
-                      <li><a href="web development projects/4.3+HTML+Portfolio+Project/4.3 HTML Porfolio Project/index.html">Html Portfolio Project</a></li>
-                      <li><a href="web development projects/5.1+Adding+CSS/5.1. Adding CSS/index.html">Adding CSS</a></li>
-                      <li><a href="web development projects/5.3+CSS+Selectors/5.3 CSS Selectors/index.html">CSS Selectors</a></li>
-                      <li><a href="web development projects/5.4+Color+Vocab+Project/index.html">Color Vocab Projects</a></li>
-                      <li><a href="web development projects/6.0+CSS+Colors/6.0 CSS Colors/index.html">CSS Colors</a></li>
-                      <li><a href="web development projects/6.1+Font+Properties/index.html">Font Properties</a></li>
-                      <li><a href="web development projects/6.3+CSS+Box+Model/6.3 CSS Box Model/index.html">CSS Box Model</a></li>
-                      <li><a href="web development projects/6.4+Motivation+Meme+Project/6.4 Motivation Meme Project/index.html">Motivation Meme Project</a></li>
-                      <li><a href="web development projects/7.0+CSS+Cascade/index.html">CSS Cascade</a></li>
-                      <li><a href="web development projects/7.1+Combining+Selectors/7.1 Combining Selectors/index.html">Combining Selectors</a></li>
-                      <li><a href="web development projects/7.2+CSS+Positioning/7.2 CSS Positioning/index.html">CSS Positioning</a></li>
-                      <li><a href="web development projects/7.3+Flag+Project/7.3 CSS Flag Project/index.html">Flag Project</a></li>
-                      <li><a href="web development projects/8.0+CSS+Display/8.0 CSS Display/index.html">CSS Display 1</a> / <a href="web development projects/8.0+CSS+Display/8.0 CSS Display/index2.html">CSS Display 2</a></li>
-                      <li><a href="web development projects/8.1+CSS+Float/8.1 CSS Float/index.html">CSS Float</a></li>
-                      <li><a href="web development projects/8.2+Responsiveness/8.2 Responsiveness/index.html">Responsiveness</a></li>
-                      <li><a href="web development projects/8.3+Media+Query/8.3 Media Query/index.html">Media Query</a></li>
-                      <li><a href="web development projects/8.4+Web+Design+Agency+Project/8.4 Web Design Agency Project/index.html">Web Design Agency</a></li>
-                      <li><a href="web development projects/9.0+Display+Flex/9.0 Display Flex/index.html">Display Flex</a></li>
-                      <li><a href="web development projects/9.1+Flex+Direction/9.1 Flex Direction/index.html">Flex Direction</a></li>
-                      <li><a href="web development projects/10.0+Display+Grid/10.0 Display Grid/index.html">Display Grid</a></li>
-                      <li><a href="web development projects/10.1+Grid+Sizing/10.1 Grid Sizing/index.html">Grid Sizing</a></li>
-                      <li><a href="web development projects/10.2+Grid+Placement/10.2 Grid Placement/exercise1.html">Grid Placement - exercise 1</a> / 
-                        <a href="web development projects/10.2+Grid+Placement/10.2 Grid Placement/exercise2.html">exercise 2</a> / 
-                        <a href="web development projects/10.2+Grid+Placement/10.2 Grid Placement/exercise3.html">exercise 3</a>
-                      </li>
-                    </ul>
-                </div>
-              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
-          </div>
           <img
             src="./assets/arrow.png"
             alt="Arrow icon"
@@ -386,6 +377,7 @@
           </nav>
           <p>Copyright &#169; 2024 Sihle Gqeza. All Rights Reserved.</p>
         </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <script src="script.js"></script>
       </body>
     </html>
