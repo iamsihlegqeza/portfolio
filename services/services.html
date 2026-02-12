@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - Sihle Gqeza</title>
+
+  <!-- INTERNAL STYLES -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+    :root{
+      --first-color: #4E1116;
+      --black-color: #000;
+      --white-color: #FFF;
+      --body-font: 'Poppins', sans-serif;
+      --h1-font-size: 2.5rem;
+      --h2-font-size: 1rem;
+      --normal-font-size: 0.93rem;
+      --small-font-size: 0.81rem;
+      --z-back: -10;
+      --z-normal: 1;
+      --z-tooltip: 10;
+      --z-fixed: 100;
+      --z-modal: 1000;
+      --header-height: 3rem;
+      --font-bold: 700;
+    }
+
+    @media screen and (min-width: 768px) {
+      :root{
+        --h1-font-size: 4.5rem;
+        --h2-font-size: 2rem;
+        --normal-font-size: 1rem;
+        --small-font-size: 1.37rem;
+      }
+    }
+
+    * , ::before, ::after {box-sizing:border-box;}
+    body{
+      margin: var(--header-height) 0 0 0;
+      font-family: var(--body-font);
+      background-color: var(--black-color);
+      color: var(--white-color);
+      font-weight: var(--font-bold);
+      overflow-x: hidden;
+    }
+
+    h1,h2 {margin:0;}
+    ul{margin:0; padding:0; list-style:none;}
+    a{text-decoration:none; color:inherit;}
+
+    .bd-grid{max-width:1200px; margin:0 auto; padding:0 1rem;}
+    .l-header{width:100%; position:fixed; top:0; left:0; z-index: var(--z-fixed); background-color: var(--black-color);}
+
+    /* NAV */
+    .nav {display:flex; justify-content:space-between; align-items:center; height:var(--header-height); font-weight: var(--font-bold);}
+    .nav__menu {display:flex;}
+    .nav__list {display:flex;}
+    .nav__item {margin-left:2rem;}
+    .nav__toggle {font-size:1.5rem; cursor:pointer;}
+
+    /* SERVICES */
+    .services {display:grid; row-gap:2rem; padding:2rem 1.5rem; position:relative;}
+    .services__title {font-size: var(--h1-font-size); margin-bottom:2rem; text-align:center;}
+    .services__grid {display:grid; grid-template-columns:1fr; gap:2rem;}
+    .service-card {
+      background-color: var(--first-color);
+      padding:2rem;
+      border-radius:.5rem;
+      text-align:center;
+      transition: transform .3s;
+    }
+    .service-card:hover {transform: translateY(-5px);}
+    .service-card h2 {font-size: var(--h2-font-size); margin-bottom:1rem;}
+    .service-card p {font-size: var(--normal-font-size); line-height:1.5;}
+
+    /* FLOATING SOCIALS */
+    .services__social {
+      display:flex; flex-direction:column; position:fixed; left:1rem; top:50%; transform:translateY(-50%); z-index: var(--z-tooltip);
+    }
+    .social-icon {margin-bottom:2rem; font-size:1.33rem; cursor:pointer; color:var(--white-color);}
+    .social-icon:hover {color: var(--first-color);}
+
+    @media screen and (min-width:768px){
+      .services__grid {grid-template-columns:repeat(3,1fr);}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="l-header">
+    <nav class="nav bd-grid">
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="../index.html" class="nav__link">Home</a></li>
+          <li class="nav__item"><a href="../about/about.html" class="nav__link">About</a></li>
+          <li class="nav__item"><a href="./services.html" class="nav__link">Services</a></li>
+          <li class="nav__item"><a href="../blog/blog.html" class="nav__link">Blog</a></li>
+          <li class="nav__item"><a href="../contact/contact.html" class="nav__link">Contact</a></li>
+        </ul>
+      </div>
+      <div class="nav__toggle" id="nav-toggle">
+        <ion-icon name="menu"></ion-icon>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main class="l-main bd-grid">
+    <section class="services">
+      <h1 class="services__title anime-text">My Services</h1>
+      <div class="services__grid">
+        <div class="service-card anime-text">
+          <h2>Web Development</h2>
+          <p>Building responsive and modern websites using HTML, CSS, JavaScript, and the MERN stack.</p>
+        </div>
+        <div class="service-card anime-text">
+          <h2>Backend Development</h2>
+          <p>Creating scalable backend solutions with Node.js, Express, MongoDB, and APIs.</p>
+        </div>
+        <div class="service-card anime-text">
+          <h2>UI/UX Design</h2>
+          <p>Designing intuitive and user-friendly interfaces to enhance user experience.</p>
+        </div>
+      </div>
+
+      <div class="services__social">
+        <a href="https://www.linkedin.com/in/sihle-gqeza/"><ion-icon name="logo-linkedin" class="social-icon"></ion-icon></a>
+        <a href="https://wa.me/+27622556751"><ion-icon name="logo-whatsapp" class="social-icon"></ion-icon></a>
+        <a href="https://www.facebook.com/sihle.gqeza.9"><ion-icon name="logo-facebook" class="social-icon"></ion-icon></a>
+      </div>
+    </section>
+  </main>
+
+  <!-- INTERNAL JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
+  <script>
+    // MENU TOGGLE
+    const showMenu = (toggleId, navId) => {
+      const toggle = document.getElementById(toggleId),
+            nav = document.getElementById(navId);
+      if(toggle && nav){
+        toggle.addEventListener('click', ()=>{nav.classList.toggle('show')});
+      }
+    }
+    showMenu('nav-toggle','nav-menu');
+
+    // GSAP ANIMATION
+    gsap.from('.services__title', {opacity:0, duration:2, y:25, ease:'expo.out'});
+    gsap.from('.service-card', {opacity:0, duration:2, y:25, ease:'expo.out', stagger:0.3});
+    gsap.from('.social-icon', {opacity:0, duration:3, y:25, ease:'expo.out', stagger:0.2});
+  </script>
+
+</body>
+</html>

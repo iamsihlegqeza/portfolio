@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog & Projects - Sihle Gqeza</title>
+
+  <!-- INTERNAL STYLES -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+    :root{
+      --first-color: #4E1116;
+      --black-color: #000;
+      --white-color: #FFF;
+      --body-font: 'Poppins', sans-serif;
+      --h1-font-size: 2.5rem;
+      --h2-font-size: 1rem;
+      --normal-font-size: 0.93rem;
+      --small-font-size: 0.81rem;
+      --z-back: -10;
+      --z-normal: 1;
+      --z-tooltip: 10;
+      --z-fixed: 100;
+      --z-modal: 1000;
+      --header-height: 3rem;
+      --font-bold: 700;
+    }
+
+    @media screen and (min-width: 768px){
+      :root{
+        --h1-font-size: 4.5rem;
+        --h2-font-size: 2rem;
+        --normal-font-size: 1rem;
+        --small-font-size: 1.37rem;
+      }
+    }
+
+    *, ::before, ::after { box-sizing: border-box; }
+    body{
+      margin: var(--header-height) 0 0 0;
+      font-family: var(--body-font);
+      background-color: var(--black-color);
+      color: var(--white-color);
+      font-weight: var(--font-bold);
+      overflow-x: hidden;
+    }
+
+    h1,h2{margin:0;}
+    ul{margin:0; padding:0; list-style:none;}
+    a{text-decoration:none; color:inherit;}
+
+    .bd-grid{max-width:1200px; margin:0 auto; padding:0 1rem;}
+    .l-header{width:100%; position:fixed; top:0; left:0; z-index: var(--z-fixed); background-color: var(--black-color);}
+
+    /* NAV */
+    .nav {display:flex; justify-content:space-between; align-items:center; height:var(--header-height); font-weight: var(--font-bold);}
+    .nav__menu {
+      position: fixed;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      height: 45%;
+      background: linear-gradient(var(--black-color), var(--first-color));
+      padding: 1.5rem;
+      border-radius: 0 0 1rem 1rem;
+      transition: 0.5s;
+      z-index: var(--z-fixed);
+    }
+    .nav__list {text-align:center;}
+    .nav__item {margin-bottom: 2rem;}
+    .nav__link {position: relative; display:inline-block;}
+    .nav__link:hover::after {
+      content: '';
+      position: absolute;
+      width: 1.5rem;
+      height: 0.1875rem;
+      left: 0;
+      bottom: -5px;
+      background-color: var(--first-color);
+    }
+    .nav__toggle {font-size:1.5rem; cursor:pointer;}
+    .show {top: var(--header-height);}
+
+    @media screen and (min-width: 768px){
+      .nav__menu {
+        position: static;
+        display: flex !important;
+        height: var(--header-height);
+        background: none;
+        border-radius: 0;
+      }
+      .nav__list {display:flex; align-items:center;}
+      .nav__item {margin-left: 2rem; margin-bottom:0;}
+      .nav__toggle {display:none;}
+    }
+
+    /* BLOG */
+    .blog {padding:2rem 1.5rem;}
+    .blog__title {font-size: var(--h1-font-size); margin-bottom:2rem; text-align:center;}
+    .blog__grid {display:grid; grid-template-columns:1fr; gap:2rem;}
+    .blog-card {
+      background-color: var(--first-color);
+      padding:2rem;
+      border-radius:.5rem;
+      transition: transform .3s;
+    }
+    .blog-card:hover {transform: translateY(-5px);}
+    .blog-card h2 {font-size: var(--h2-font-size); margin-bottom:1rem;}
+    .blog-card p {font-size: var(--normal-font-size); line-height:1.5;}
+    .blog-card a {display:inline-block; margin-top:1rem; color: var(--white-color); font-weight:700;}
+
+    /* PROJECTS */
+    .projects {padding:2rem 1.5rem;}
+    .projects__title {font-size: var(--h1-font-size); margin-bottom:2rem; text-align:center;}
+    .projects__grid {display:grid; grid-template-columns:1fr; gap:2rem;}
+    .project-card {
+      background-color: var(--first-color);
+      padding:2rem;
+      border-radius:.5rem;
+      transition: transform .3s;
+    }
+    .project-card:hover {transform: translateY(-5px);}
+    .project-card h2 {font-size: var(--h2-font-size); margin-bottom:1rem;}
+    .project-card p {font-size: var(--normal-font-size); line-height:1.5;}
+    .project-card a {display:inline-block; margin-top:1rem; color: var(--white-color); font-weight:700;}
+
+    /* SOCIAL */
+    .social {
+      display:flex; flex-direction:column; position:fixed; left:1rem; top:50%; transform:translateY(-50%); z-index: var(--z-tooltip);
+    }
+    .social-icon {margin-bottom:2rem; font-size:1.33rem; cursor:pointer; color:var(--white-color);}
+    .social-icon:hover {color: var(--first-color);}
+
+    @media screen and (min-width:768px){
+      .blog__grid, .projects__grid {grid-template-columns:repeat(2,1fr);}
+    }
+    @media screen and (min-width:1200px){
+      .blog__grid, .projects__grid {grid-template-columns:repeat(3,1fr);}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="l-header">
+    <nav class="nav bd-grid">
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="../index.html" class="nav__link">Home</a></li>
+          <li class="nav__item"><a href="../about/about.html" class="nav__link">About</a></li>
+          <li class="nav__item"><a href="../services/services.html" class="nav__link">Services</a></li>
+          <li class="nav__item"><a href="./blog.html" class="nav__link">Blog</a></li>
+          <li class="nav__item"><a href="../contact/contact.html" class="nav__link">Contact</a></li>
+        </ul>
+      </div>
+      <div class="nav__toggle" id="nav-toggle">
+        <ion-icon name="menu"></ion-icon>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main class="l-main bd-grid">
+
+    <!-- BLOG POSTS -->
+    <section class="blog">
+      <h1 class="blog__title anime-text">Latest Blog Posts</h1>
+      <div class="blog__grid">
+
+        <div class="blog-card anime-text">
+          <h2>How I Built My Blogging Website</h2>
+          <p>I created my MERN stack blogging website to provide news and information to my hometown. It features user authentication, admin control, and AWS S3 image uploads. This project taught me backend development and integrating cloud storage.</p>
+          <a href="https://sterkspruit.netlify.app/" target="_blank">View Live</a>
+        </div>
+
+        <div class="blog-card anime-text">
+          <h2>Portfolio Website Development</h2>
+          <p>This site showcases my skills and projects. I implemented animations, responsive layouts, and interactive elements to create a professional and engaging portfolio experience.</p>
+        </div>
+
+        <div class="blog-card anime-text">
+          <h2>My Journey into Web Development</h2>
+          <p>I started learning web development by fixing engines and creating small websites at home. Over time, I transitioned into full-stack development, mastering HTML, CSS, JavaScript, Node.js, and MongoDB.</p>
+        </div>
+
+        <div class="blog-card anime-text">
+          <h2>Learning from Challenges</h2>
+          <p>Every setback became an opportunity. Through persistence, trial and error, and continuous learning, I gradually built the skills and confidence required to launch my own projects and freelance work.</p>
+        </div>
+
+        <div class="blog-card anime-text">
+          <h2>Continuous Learning & Skills Growth</h2>
+          <p>I am currently learning Chinese alongside web technologies such as React, Firebase, and AWS. Expanding knowledge beyond coding allows me to adapt to new opportunities and global projects.</p>
+        </div>
+
+        <div class="blog-card anime-text">
+          <h2>Building My MERN Stack Skills</h2>
+          <p>I focused on mastering MongoDB, Express, React, and Node.js to create scalable applications. Projects like my blogging website and portfolio strengthened my full-stack development expertise.</p>
+        </div>
+
+        <div class="blog-card anime-text">
+          <h2>Exploring JavaScript Projects</h2>
+          <p>From movie ranking apps to interactive invitations, small JavaScript projects allowed me to experiment with DOM manipulation, local storage, and user interactivity while practicing clean code principles.</p>
+        </div>
+
+        <div class="blog-card anime-text">
+          <h2>Learning by Doing</h2>
+          <p>Hands-on experience has been crucial in my growth. Each project teaches problem-solving, debugging, and creative solutions—skills that theory alone cannot provide.</p>
+        </div>
+
+        <div class="blog-card anime-text">
+          <h2>My Goals for the Future</h2>
+          <p>I aim to run a media company, expand my blogging platform, and help my community gain access to information, education, and opportunities while continuing to grow as a developer and entrepreneur.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="projects">
+      <h1 class="projects__title anime-text">My GitHub Projects</h1>
+      <div class="projects__grid">
+
+        <div class="project-card anime-text">
+          <h2>Movie Ranking Project</h2>
+          <p>A JavaScript app for ranking movies. I built it to practice DOM manipulation and localStorage, learning how to create dynamic interactive web pages.</p>
+          <a href="https://iamsihlegqeza.github.io/movie-ranking-project/" target="_blank">View Live</a>
+        </div>
+
+        <div class="project-card anime-text">
+          <h2>Birthday Invite Project</h2>
+          <p>A responsive web app for creating birthday invitations. I started this project to experiment with forms, responsive design, and interactive components in JavaScript.</p>
+          <a href="https://iamsihlegqeza.github.io/birthday-invite-project/" target="_blank">View Live</a>
+        </div>
+
+      </div>
+
+      <div class="social">
+        <a href="https://www.linkedin.com/in/sihle-gqeza/"><ion-icon name="logo-linkedin" class="social-icon"></ion-icon></a>
+        <a href="https://wa.me/+27622556751"><ion-icon name="logo-whatsapp" class="social-icon"></ion-icon></a>
+        <a href="https://www.facebook.com/sihle.gqeza.9"><ion-icon name="logo-facebook" class="social-icon"></ion-icon></a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- INTERNAL JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
+  <script>
+    // MENU TOGGLE
+    const showMenu = (toggleId, navId) => {
+      const toggle = document.getElementById(toggleId),
+            nav = document.getElementById(navId);
+      if(toggle && nav){
+        toggle.addEventListener('click', ()=>{nav.classList.toggle('show')});
+      }
+    }
+    showMenu('nav-toggle','nav-menu');
+
+    // GSAP ANIMATION
+    gsap.from('.blog__title', {opacity:0, duration:2, y:25, ease:'expo.out'});
+    gsap.from('.blog-card', {opacity:0, duration:2, y:25, ease:'expo.out', stagger:0.2});
+    gsap.from('.projects__title', {opacity:0, duration:2, y:25, ease:'expo.out', delay:0.5});
+    gsap.from('.project-card', {opacity:0, duration:2, y:25, ease:'expo.out', stagger:0.3, delay:0.5});
+    gsap.from('.social-icon', {opacity:0, duration:2, y:25, ease:'expo.out', stagger:0.2, delay:1});
+  </script>
+
+</body>
+</html>

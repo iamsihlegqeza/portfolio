@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Sihle Gqeza</title>
+
+  <!-- INTERNAL STYLES -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+    :root{
+      --first-color: #4E1116;
+      --black-color: #000;
+      --white-color: #FFF;
+      --body-font: 'Poppins', sans-serif;
+      --h1-font-size: 2.5rem;
+      --h2-font-size: 1rem;
+      --normal-font-size: 0.93rem;
+      --small-font-size: 0.81rem;
+      --z-back: -10;
+      --z-normal: 1;
+      --z-tooltip: 10;
+      --z-fixed: 100;
+      --z-modal: 1000;
+      --header-height: 3rem;
+      --font-bold: 700;
+    }
+
+    @media screen and (min-width: 768px){
+      :root{
+        --h1-font-size: 4.5rem;
+        --h2-font-size: 2rem;
+        --normal-font-size: 1rem;
+        --small-font-size: 1.37rem;
+      }
+    }
+
+    *, ::before, ::after { box-sizing: border-box; }
+    body{
+      margin: var(--header-height) 0 0 0;
+      font-family: var(--body-font);
+      background-color: var(--black-color);
+      color: var(--white-color);
+      font-weight: var(--font-bold);
+      overflow-x: hidden;
+    }
+
+    h1,h2{margin:0;}
+    ul{margin:0; padding:0; list-style:none;}
+    a{text-decoration:none; color:inherit;}
+
+    .bd-grid{max-width:1200px; margin:0 auto; padding:0 1rem;}
+    .l-header{width:100%; position:fixed; top:0; left:0; z-index: var(--z-fixed); background-color: var(--black-color);}
+
+    /* NAV */
+    .nav {display:flex; justify-content:space-between; align-items:center; height:var(--header-height); font-weight: var(--font-bold);}
+    .nav__menu {
+      position: fixed;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      height: 45%;
+      background: linear-gradient(var(--black-color), var(--first-color));
+      padding: 1.5rem;
+      border-radius: 0 0 1rem 1rem;
+      transition: 0.5s;
+      z-index: var(--z-fixed);
+    }
+    .nav__list {text-align:center;}
+    .nav__item {margin-bottom: 2rem;}
+    .nav__link {position: relative; display:inline-block;}
+    .nav__link:hover::after {
+      content: '';
+      position: absolute;
+      width: 1.5rem;
+      height: 0.1875rem;
+      left: 0;
+      bottom: -5px;
+      background-color: var(--first-color);
+    }
+    .nav__toggle {font-size:1.5rem; cursor:pointer;}
+    .show {top: var(--header-height);}
+
+    @media screen and (min-width: 768px){
+      .nav__menu {
+        position: static;
+        display: flex !important;
+        height: var(--header-height);
+        background: none;
+        border-radius: 0;
+      }
+      .nav__list {display:flex; align-items:center;}
+      .nav__item {margin-left: 2rem; margin-bottom:0;}
+      .nav__toggle {display:none;}
+    }
+
+    /* CONTACT */
+    .contact {padding:2rem 1.5rem; display:grid; row-gap:2rem;}
+    .contact__title {font-size: var(--h1-font-size); text-align:center; margin-bottom:2rem;}
+    .contact__form {display:flex; flex-direction:column; max-width:600px; margin:0 auto;}
+    .contact__form label {margin-bottom:0.5rem; font-weight: var(--font-bold);}
+    .contact__form input, 
+    .contact__form textarea {
+      margin-bottom:1.5rem;
+      padding:0.75rem;
+      border-radius:0.25rem;
+      border:none;
+      font-size: var(--normal-font-size);
+      background-color: var(--first-color);
+      color: var(--white-color);
+      resize:none;
+    }
+    .contact__form button {
+      padding:0.75rem 1.5rem;
+      background-image: linear-gradient(to right, var(--black-color), var(--first-color));
+      border:none;
+      border-radius:0.25rem;
+      font-weight: var(--font-bold);
+      color: var(--white-color);
+      cursor:pointer;
+      font-size: var(--normal-font-size);
+      transition: transform .3s;
+    }
+    .contact__form button:hover {transform: translateY(-3px);}
+
+    /* SOCIAL */
+    .social {
+      display:flex; justify-content:center; margin-top:2rem;
+    }
+    .social-icon {margin:0 1rem; font-size:1.33rem; cursor:pointer; color:var(--white-color);}
+    .social-icon:hover {color: var(--first-color);}
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="l-header">
+    <nav class="nav bd-grid">
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="../index.html" class="nav__link">Home</a></li>
+          <li class="nav__item"><a href="../about/about.html" class="nav__link">About</a></li>
+          <li class="nav__item"><a href="../services/services.html" class="nav__link">Services</a></li>
+          <li class="nav__item"><a href="../blog/blog.html" class="nav__link">Blog</a></li>
+          <li class="nav__item"><a href="./contact.html" class="nav__link">Contact</a></li>
+        </ul>
+      </div>
+      <div class="nav__toggle" id="nav-toggle">
+        <ion-icon name="menu"></ion-icon>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main class="l-main bd-grid">
+
+    <!-- CONTACT FORM -->
+    <section class="contact">
+      <h1 class="contact__title anime-text">Get in Touch</h1>
+      <form class="contact__form anime-text" action="mailto:iamsihlegqeza@gmail.com" method="post" enctype="text/plain">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Your email address" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" placeholder="Write your message..." required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+
+      <!-- SOCIAL ICONS -->
+      <div class="social anime-text">
+        <a href="https://www.linkedin.com/in/sihle-gqeza/"><ion-icon name="logo-linkedin" class="social-icon"></ion-icon></a>
+        <a href="https://wa.me/+27622556751"><ion-icon name="logo-whatsapp" class="social-icon"></ion-icon></a>
+        <a href="https://www.facebook.com/sihle.gqeza.9"><ion-icon name="logo-facebook" class="social-icon"></ion-icon></a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
+  <script>
+    // MENU TOGGLE
+    const showMenu = (toggleId, navId) => {
+      const toggle = document.getElementById(toggleId),
+            nav = document.getElementById(navId);
+      if(toggle && nav){
+        toggle.addEventListener('click', ()=>{nav.classList.toggle('show')});
+      }
+    }
+    showMenu('nav-toggle','nav-menu');
+
+    // GSAP ANIMATION
+    gsap.from('.contact__title', {opacity:0, duration:2, y:25, ease:'expo.out'});
+    gsap.from('.contact__form', {opacity:0, duration:2, y:25, ease:'expo.out', delay:0.3});
+    gsap.from('.social-icon', {opacity:0, duration:2, y:25, ease:'expo.out', stagger:0.2, delay:0.5});
+  </script>
+
+</body>
+</html>
