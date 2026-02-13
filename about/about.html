@@ -103,15 +103,33 @@
       .nav__toggle {display:none;}
     }
 
-    /* ABOUT */
-    .about {display:grid; grid-template-columns:1fr; row-gap:2rem; align-content:start; padding:2rem 1.5rem; position:relative;}
-    .about__img {width:291px; margin:0 auto; border-radius:.25rem;}
-    .about__information {padding-left:1.5rem; border-left:5px solid var(--white-color); z-index: var(--z-tooltip);}
-    .about__title {font-size: var(--h1-font-size); margin-bottom:1rem;}
-    .about__text {font-size: var(--normal-font-size); margin-bottom:1rem; line-height:1.5;}
-    .about__button {
-      display:inline-block; margin-top:1.5rem; font-size:.75rem; color:var(--white-color);
-      padding:.625rem 1rem; border-radius:.25rem; background-image: linear-gradient(to right, var(--black-color), var(--first-color));
+    /* ABOUT SECTION */
+    .about {display:block; padding:2rem 1.5rem; position:relative; max-width: 1200px; margin:0 auto;}
+    
+    /* FLOATING IMAGE */
+    .about__img-float {
+      float: left;
+      width: 250px;          /* Adjust as needed */
+      margin: 0 1.5rem 1rem 0;
+      border-radius: .25rem;
+    }
+
+    .about__information h1 {font-size: var(--h1-font-size); margin-bottom:1rem;}
+    .about__information h2 {font-size: xx-large; margin-top:1.5rem; margin-bottom:0.5rem;}
+    .about__information p, .about__information ol {
+      font-size: var(--normal-font-size);
+      margin-bottom: 1rem;
+      line-height: 1.5;
+      color: var(--white-color);
+    }
+    .about__information ol {padding-left: 1.2rem;}
+    .about__information a {color: aqua;}
+
+    /* Clear floats after content */
+    .about__information::after {
+      content: "";
+      display: block;
+      clear: both;
     }
 
     /* FLOATING SOCIALS */
@@ -121,10 +139,10 @@
     .about__social-icon {margin-bottom:2rem; font-size:1.33rem; cursor:pointer; color:var(--white-color);}
     .about__social-icon:hover {color: var(--first-color);}
 
-    @media screen and (min-width:768px){
-      .about {grid-template-columns:1fr 1fr; column-gap:3rem;}
-      .about__img {width:100%; max-width:400px; margin:0;}
-      .about__information {padding-left:2rem;}
+    @media screen and (max-width:768px){
+      .about__img-float {width: 100%; float: none; margin: 0 0 1rem 0; display:block;}
+      .about__social {flex-direction: row; bottom:1rem; top:auto; left:50%; transform:translateX(-50%);}
+      .about__social-icon {margin: 0 1rem;}
     }
   </style>
 </head>
@@ -150,13 +168,35 @@
   <!-- MAIN -->
   <main class="l-main bd-grid">
     <section class="about">
-      <div class="about__img"><img src="../assets/img/IMG_20260202_213736_202.jpg" alt="Sihle Gqeza"></div>
       <div class="about__information">
+        <img src="../assets/img/IMG_20260202_213736_202.jpg" alt="Sihle Gqeza" class="about__img-float">
+
         <h1 class="about__title anime-text">About Me</h1>
-        <p class="about__text anime-text">Hello! I'm <strong>Sihle Gqeza</strong>, a passionate Web Developer from South Africa. I specialize in creating responsive, user-friendly websites using modern technologies like <strong>HTML, CSS, JavaScript, Node.js, Express, MongoDB</strong>, and the MERN stack.</p>
-        <p class="about__text anime-text">I grew up fixing cars, which taught me patience and problem-solving skills — qualities I now apply to coding. My goal is to help my community by creating digital solutions that inform, educate, and connect people.</p>
-        <p class="about__text anime-text">Currently, I'm learning <strong>Chinese</strong> and expanding my portfolio with new projects. I enjoy tackling challenging web development problems and continuously improving my skills.</p>
-        <a href="../assets/cv/Sihle_Gqeza_CV.pdf" class="about__button anime-text">Download CV</a>
+        <p class="about__text anime-text">I am a software developer passionate about designing and delivering scalable, real-world solutions that improve efficiency, solve operational challenges, and create meaningful impact. My journey into software development began after reading Steve Jobs by Walter Isaacson, which introduced me to Jobs’ philosophy of innovation and product-driven leadership. Since then, I have approached software development not just as coding, but as building purposeful systems that address real human problems.</p>
+        <h2 class="about__text anime-text">Leadership Through Problem Solving</h2>
+        <p class="about__text anime-text">My development journey began with creating a <strong style="color: aqua;">Shop Management System</strong> using C#, MVC, and SQL Server for a family supermarket. Leading this project required understanding business operations, translating requirements into technical solutions, and implementing data backup strategies to ensure continuity. This experience shaped my ability to deliver solutions aligned with real business needs.</p>
+        <p class="about__text anime-text">I also developed a <a href="https://iamsihlegqeza.github.io/people-counter/"><u>People Counter Application</u></a> using JavaScript, HTML, and CSS for a construction company. The system improved workflow monitoring by providing accurate tracking of material transportation. This project strengthened my skills in stakeholder communication, operational analysis, and implementing efficient digital solutions.</p>
+        <p class="about__text anime-text">Before transitioning fully into software development, I gained extensive hands-on experience in <strong style="color: aqua;">engineering</strong>, <strong style="color: aqua;">construction</strong>, and <strong style="color: aqua;">automotive repair</strong>. I spent several years fixing cars, specializing in engines, which honed my mechanical problem-solving skills and attention to detail. I also worked in construction, building houses and learning project coordination, workflow management, and practical problem-solving on-site. These experiences cultivated a strong mindset for troubleshooting, efficiency, and applying technical solutions in real-world environments.</p>
+        
+        <h2 class="about__text anime-text">Driving Community-Focused Innovation</h2>
+        <p class="about__text anime-text">One of my most impactful initiatives is a <a href="https://sterkspruit.netlify.app/"><u>community blogging platform</u></a> built with the MERN stack, cloud storage, authentication systems, and modern UI frameworks. The platform serves as a digital hub to support local development, offering news, job opportunities, and community updates. It integrates authentication via Clerk and cloud storage via AWS S3, showcasing my ability to design secure and scalable cloud-enabled applications.</p>
+        <p class="about__text anime-text">Currently, I am leading the development of a <strong style="color: aqua;">School Management System</strong> using Next.js, Prisma, PostgreSQL, and modern authentication tools. This platform digitizes school operations, including student registration, attendance management, and grading workflows, helping educational institutions reduce administrative errors and improve efficiency.</p>
+        
+        <h2 class="about__text anime-text">Technical Expertise</h2>
+        <p class="about__text anime-text">I have strong experience across full-stack development, including:
+          <ol class="about__text anime-text">
+            <li>JavaScript, React.js, Node.js, Express.js.</li>
+            <li>C# and SQL-based system development.</li>
+            <li>MongoDB, PostgreSQL, and Prisma ORM.</li>
+            <li>Cloud storage integration and authentication systems.</li>
+            <li>Modern responsive UI development and performance optimization.</li>
+          </ol>
+        </p>
+        <p class="about__text anime-text">I hold certifications from freeCodeCamp in <a href="https://www.freecodecamp.org/certification/iamsihlegqeza/javascript-algorithms-and-data-structures-v8"><u>JavaScript Algorithms & Data Structures</u></a> and <a href="https://www.freecodecamp.org/certification/iamsihlegqeza/responsive-web-design"><u>Responsive Web Design</u></a>, and I have completed advanced development training through Udemy. I remain committed to continuous learning, modern development practices, and scalable architecture design.</p>
+        
+        <h2 class="about__text anime-text">Vision and Impact</h2>
+        <p class="about__text anime-text">Beyond writing code, I am driven by a long-term vision of using technology to empower communities and create digital ecosystems that support economic growth and access to information. My background in engineering, construction, and automotive repair adds a practical, problem-solving perspective that complements my software development expertise. I enjoy mentoring through shared knowledge, collaborating with teams, and leading projects that deliver measurable impact.</p>
+        <p class="about__text anime-text">I am open to opportunities as a frontend, backend, or full-stack developer, particularly in environments that value innovation, scalability, and real-world solutions.</p>
       </div>
 
       <div class="about__social">
@@ -181,11 +221,17 @@
     }
     showMenu('nav-toggle','nav-menu');
 
+    // Close mobile menu on link click
+    document.querySelectorAll('.nav__link').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('nav-menu').classList.remove('show');
+      });
+    });
+
     // GSAP ANIMATION
-    gsap.from('.about__img', {opacity:0, duration:2, x:60});
+    gsap.from('.about__img-float', {opacity:0, duration:2, x:60});
     gsap.from('.about__title', {opacity:0, duration:2, y:25, ease:'expo.out'});
     gsap.from('.about__text', {opacity:0, duration:2, y:25, ease:'expo.out', stagger:0.3});
-    gsap.from('.about__button', {opacity:0, duration:2, y:25, ease:'expo.out'});
     gsap.from('.about__social-icon', {opacity:0, duration:3, y:25, ease:'expo.out', stagger:0.2});
   </script>
 </body>
