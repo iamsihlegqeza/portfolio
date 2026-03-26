@@ -4,11 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About - Sihle Gqeza</title>
-
   <!-- INTERNAL STYLES -->
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-
     :root{
       --first-color: #4E1116;
       --black-color: #000;
@@ -26,7 +24,6 @@
       --header-height: 3rem;
       --font-bold: 700;
     }
-
     @media screen and (min-width: 768px) {
       :root{
         --h1-font-size: 4.5rem;
@@ -35,11 +32,9 @@
         --small-font-size: 1.37rem;
       }
     }
-
     * , ::before, ::after{
       box-sizing: border-box;
     }
-
     body{
       margin: var(--header-height) 0 0 0;
       font-family: var(--body-font);
@@ -48,19 +43,42 @@
       font-weight: var(--font-bold);
       overflow-x: hidden;
     }
-
-    h1, h2 {margin: 0;}
-    ul {margin:0; padding:0; list-style:none;}
-    a {text-decoration:none; color: inherit;}
-    img {max-width:100%; height:auto;}
-
-    .bd-grid {max-width:1200px; margin:0 auto; padding:0 1rem;}
-    .l-header{
-      width:100%; position:fixed; top:0; left:0; z-index: var(--z-fixed); background-color: var(--black-color);
+    h1, h2 {
+      margin: 0;
     }
-
+    ul {
+      margin: 0; 
+      padding: 0; 
+      list-style: none;
+    }
+    a {
+      text-decoration: none; 
+      color: inherit;}
+    img {
+      max-width: 100%; 
+      height: auto;
+    }
+    .bd-grid { 
+      max-width: 1200px; 
+      margin: 0 auto; 
+      padding: 0 1rem;
+    }
+    .l-header{
+      width: 100%; 
+      position: fixed; 
+      top:0; 
+      left:0; 
+      z-index: var(--z-fixed); 
+      background-color: var(--black-color);
+    }
     /* NAV */
-    .nav {display:flex; justify-content:space-between; align-items:center; height:var(--header-height); font-weight: var(--font-bold);}
+    .nav {
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      height: var(--header-height); 
+      font-weight: var(--font-bold);
+    }
     .nav__menu {
       position: fixed;
       top: -100%;
@@ -85,11 +103,14 @@
       bottom: -5px;
       background-color: var(--first-color);
     }
-    .nav__toggle {font-size:1.5rem; cursor:pointer;}
-
+    .nav__toggle {
+      font-size: 1.5rem; 
+      cursor: pointer;
+    }
     /* Show menu */
-    .show {top: var(--header-height);}
-
+    .show {
+      top: var(--header-height);
+    }
     @media screen and (min-width: 768px){
       .nav__menu {
         position: static;
@@ -98,14 +119,26 @@
         background: none;
         border-radius: 0;
       }
-      .nav__list {display:flex; align-items:center;}
-      .nav__item {margin-left: 2rem; margin-bottom:0;}
-      .nav__toggle {display:none;}
+      .nav__list {
+        display: flex; 
+        align-items: center;
+      }
+      .nav__item {
+        margin-left: 2rem; 
+        margin-bottom: 0;
+      }
+      .nav__toggle {
+        display: none;
+      }
     }
-
     /* ABOUT SECTION */
-    .about {display:block; padding:2rem 1.5rem; position:relative; max-width: 1200px; margin:0 auto;}
-    
+    .about {
+      display: block; 
+      padding: 2rem 1.5rem; 
+      position: relative; 
+      max-width: 1200px;
+      margin: 0 auto;
+    }
     /* FLOATING IMAGE */
     .about__img-float {
       float: left;
@@ -114,35 +147,69 @@
       border-radius: .25rem;
     }
 
-    .about__information h1 {font-size: var(--h1-font-size); margin-bottom:1rem;}
-    .about__information h2 {font-size: xx-large; margin-top:1.5rem; margin-bottom:0.5rem;}
+    .about__information h1 {
+      font-size: var(--h1-font-size);
+      margin-bottom: 1rem;
+    }
+    .about__information h2 {
+      font-size: xx-large;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
     .about__information p, .about__information ol {
       font-size: var(--normal-font-size);
       margin-bottom: 1rem;
       line-height: 1.5;
       color: var(--white-color);
     }
-    .about__information ol {padding-left: 1.2rem;}
-    .about__information a {color: aqua;}
-
+    .about__information ol {
+      padding-left: 1.2rem;
+    }
+    .about__information a {
+      color: aqua;
+    }
     /* Clear floats after content */
     .about__information::after {
       content: "";
       display: block;
       clear: both;
     }
-
     /* FLOATING SOCIALS */
     .about__social {
-      display:flex; flex-direction:column; position:fixed; left:1rem; top:50%; transform:translateY(-50%); z-index: var(--z-tooltip);
+      display: flex; 
+      flex-direction: column; 
+      position: fixed;
+      left: 1rem; 
+      top: 50%; 
+      transform: translateY(-50%);
+      z-index: var(--z-tooltip);
     }
-    .about__social-icon {margin-bottom:2rem; font-size:1.33rem; cursor:pointer; color:var(--white-color);}
-    .about__social-icon:hover {color: var(--first-color);}
-
-    @media screen and (max-width:768px){
-      .about__img-float {width: 100%; float: none; margin: 0 0 1rem 0; display:block;}
-      .about__social {flex-direction: row; bottom:1rem; top:auto; left:50%; transform:translateX(-50%);}
-      .about__social-icon {margin: 0 1rem;}
+    .about__social-icon {
+      margin-bottom: 2rem;
+      font-size: 1.33rem;
+      cursor: pointer;
+      color:var(--white-color);
+    }
+    .about__social-icon: hover {
+      color: var(--first-color);
+    }
+    @media screen and (max-width: 768px){
+      .about__img-float {
+        width: 100%;
+        float: none;
+        margin: 0 0 1rem 0;
+        display: block;
+      }
+      .about__social {
+        flex-direction: row; 
+        bottom: 1rem; 
+        top: auto; 
+        left: 50%; 
+        transform: translateX(-50%);
+      }
+      .about__social-icon {
+        margin: 0 1rem;
+      }
     }
   </style>
 </head>
@@ -164,7 +231,6 @@
       </div>
     </nav>
   </header>
-
   <!-- MAIN -->
   <main class="l-main bd-grid">
     <section class="about">
@@ -180,7 +246,7 @@
         
         <h2 class="about__text anime-text">Driving Community-Focused Innovation</h2>
         <p class="about__text anime-text">One of my most impactful initiatives is a <a href="https://sterkspruit.netlify.app/"><u>community blogging platform</u></a> built with the MERN stack, cloud storage, authentication systems, and modern UI frameworks. The platform serves as a digital hub to support local development, offering news, job opportunities, and community updates. It integrates authentication via Clerk and cloud storage via AWS S3, showcasing my ability to design secure and scalable cloud-enabled applications.</p>
-        <p class="about__text anime-text">Currently, I am leading the development of a <strong style="color: aqua;">School Management System</strong> using Next.js, Prisma, PostgreSQL, and modern authentication tools. This platform digitizes school operations, including student registration, attendance management, and grading workflows, helping educational institutions reduce administrative errors and improve efficiency.</p>
+        <p class="about__text anime-text">Currently, I am leading the development of a <strong style=" color: aqua;">School Management System</strong> using Next.js, Prisma, PostgreSQL, and modern authentication tools. This platform digitizes school operations, including student registration, attendance management, and grading workflows, helping educational institutions reduce administrative errors and improve efficiency.</p>
         
         <h2 class="about__text anime-text">Technical Expertise</h2>
         <p class="about__text anime-text">I have strong experience across full-stack development, including:
@@ -200,13 +266,18 @@
       </div>
 
       <div class="about__social">
-        <a href="https://www.linkedin.com/in/sihle-gqeza/"><ion-icon name="logo-linkedin" class="about__social-icon"></ion-icon></a>
-        <a href="https://wa.me/+27622556751"><ion-icon name="logo-whatsapp" class="about__social-icon"></ion-icon></a>
-        <a href="https://www.facebook.com/sihle.gqeza.9"><ion-icon name="logo-facebook" class="about__social-icon"></ion-icon></a>
+        <a href="https://www.linkedin.com/in/sihle-gqeza/">
+          <ion-icon name="logo-linkedin" class="about__social-icon"></ion-icon>
+        </a>
+        <a href="https://wa.me/+27622556751">
+          <ion-icon name="logo-whatsapp" class="about__social-icon"></ion-icon>
+        </a>
+        <a href="https://www.facebook.com/sihle.gqeza.9">
+          <ion-icon name="logo-facebook" class="about__social-icon"></ion-icon>
+        </a>
       </div>
     </section>
   </main>
-
   <!-- INTERNAL JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
@@ -220,14 +291,12 @@
       }
     }
     showMenu('nav-toggle','nav-menu');
-
     // Close mobile menu on link click
     document.querySelectorAll('.nav__link').forEach(link => {
       link.addEventListener('click', () => {
         document.getElementById('nav-menu').classList.remove('show');
       });
     });
-
     // GSAP ANIMATION
     gsap.from('.about__img-float', {opacity:0, duration:2, x:60});
     gsap.from('.about__title', {opacity:0, duration:2, y:25, ease:'expo.out'});
