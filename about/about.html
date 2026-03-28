@@ -53,7 +53,8 @@
     }
     a {
       text-decoration: none; 
-      color: inherit;}
+      color: inherit;
+    }
     img {
       max-width: 100%; 
       height: auto;
@@ -245,7 +246,7 @@
         <p class="about__text anime-text">Before transitioning fully into software development, I gained extensive hands-on experience in <strong style="color: aqua;">engineering</strong>, <strong style="color: aqua;">construction</strong>, and <strong style="color: aqua;">automotive repair</strong>. I spent several years fixing cars, specializing in engines, which honed my mechanical problem-solving skills and attention to detail. I also worked in construction, building houses and learning project coordination, workflow management, and practical problem-solving on-site. These experiences cultivated a strong mindset for troubleshooting, efficiency, and applying technical solutions in real-world environments.</p>
         
         <h2 class="about__text anime-text">Driving Community-Focused Innovation</h2>
-        <p class="about__text anime-text">One of my most impactful initiatives is a <a href="https://sterkspruit.netlify.app/"><u>community blogging platform</u></a> built with the MERN stack, cloud storage, authentication systems, and modern UI frameworks. The platform serves as a digital hub to support local development, offering news, job opportunities, and community updates. It integrates authentication via Clerk and cloud storage via AWS S3, showcasing my ability to design secure and scalable cloud-enabled applications.</p>
+         <p class="about__text anime-text">One of my most impactful initiatives is a <a href="https://sterkspruit.netlify.app/"><u>community blogging platform</u></a> built with the MERN stack, cloud storage, authentication systems, and modern UI frameworks. The platform serves as a digital hub to support local development, offering news, job opportunities, and community updates. It integrates authentication via Clerk and cloud storage via AWS S3, showcasing my ability to design secure and scalable cloud-enabled applications.</p>
         <p class="about__text anime-text">Currently, I am leading the development of a <strong style=" color: aqua;">School Management System</strong> using Next.js, Prisma, PostgreSQL, and modern authentication tools. This platform digitizes school operations, including student registration, attendance management, and grading workflows, helping educational institutions reduce administrative errors and improve efficiency.</p>
         
         <h2 class="about__text anime-text">Technical Expertise</h2>
@@ -287,7 +288,9 @@
       const toggle = document.getElementById(toggleId),
             nav = document.getElementById(navId);
       if(toggle && nav){
-        toggle.addEventListener('click', () => {nav.classList.toggle('show');});
+        toggle.addEventListener('click', () => {
+          nav.classList.toggle('show');
+        });
       }
     }
     showMenu('nav-toggle','nav-menu');
@@ -298,10 +301,30 @@
       });
     });
     // GSAP ANIMATION
-    gsap.from('.about__img-float', {opacity:0, duration:2, x:60});
-    gsap.from('.about__title', {opacity:0, duration:2, y:25, ease:'expo.out'});
-    gsap.from('.about__text', {opacity:0, duration:2, y:25, ease:'expo.out', stagger:0.3});
-    gsap.from('.about__social-icon', {opacity:0, duration:3, y:25, ease:'expo.out', stagger:0.2});
+    gsap.from('.about__img-float', {
+      opacity: 0,
+      duration: 2, 
+      x: 60
+    });
+    gsap.from('.about__title', {
+      opacity: 0, 
+      duration: 2,
+      y: 25, 
+      ease: 'expo.out'
+    });
+    gsap.from('.about__text', {
+      opacity: 0,
+      duration: 2,
+      y: 25,
+      ease: 'expo.out', stagger:0.3
+    });
+    gsap.from('.about__social-icon', {
+      opacity: 0, 
+      duration: 3, 
+      y: 25, 
+      ease: 'expo.out', 
+      stagger: 0.2
+    });
   </script>
 </body>
 </html>
