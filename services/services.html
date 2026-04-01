@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services - Sihle Gqeza</title>
+  <title>Services | Sihle Gqeza</title>
 
   <!-- INTERNAL STYLES -->
   <style>
@@ -46,12 +46,32 @@
       overflow-x: hidden;
     }
 
-    h1,h2 {margin:0;}
-    ul{margin:0; padding:0; list-style:none;}
-    a{text-decoration:none; color:inherit;}
+    h1,h2 {
+      margin: 0;
+    }
+    ul{
+      margin: 0; 
+      padding: 0; 
+      list-style: none;
+    }
+    a{
+      text-decoration: none; 
+      color: inherit;
+    }
 
-    .bd-grid{max-width:1200px; margin:0 auto; padding:0 1rem;}
-    .l-header{width:100%; position:fixed; top:0; left:0; z-index: var(--z-fixed); background-color: var(--black-color);}
+    .bd-grid{
+      max-width: 1200px; 
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    .l-header{
+      width: 100%;
+      position: fixed;
+      top: 0; 
+      left: 0; 
+      z-index: var(--z-fixed); 
+      background-color: var(--black-color);
+    }
 
     /* NAV */
     .nav {
@@ -62,8 +82,15 @@
       gap:2rem;
     }
     .nav__item {}
-    .nav__link {color:var(--white-color); font-weight:700;}
-    .nav__toggle {font-size:1.5rem; cursor:pointer; display:none;}
+    .nav__link {
+      color: var(--white-color);
+      font-weight: 700;
+    }
+    .nav__toggle {
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: none;
+    }
 
     /* MOBILE NAV */
     @media screen and (max-width:768px){
@@ -75,40 +102,82 @@
         height:45%;
         background-image: linear-gradient(var(--black-color), var(--first-color));
         flex-direction: column;
-        text-align:center;
-        padding:1.5rem;
-        border-radius:0 0 1rem 1rem;
-        transition:.5s;
+        text-align: center;
+        padding: 1.5rem;
+        border-radius: 0 0 1rem 1rem;
+        transition: .5s;
       }
-      .nav__list.show { top: var(--header-height); }
-      .nav__toggle { display:block; }
-      .nav__item {margin-bottom:2rem;}
+      .nav__list.show { 
+        top: var(--header-height); 
+      }
+      .nav__toggle { 
+        display: block;
+      }
+      .nav__item {
+        margin-bottom: 2rem;
+      }
     }
 
     /* SERVICES */
-    .services {display:grid; row-gap:2rem; padding:2rem 1.5rem; position:relative;}
-    .services__title {font-size: var(--h1-font-size); margin-bottom:2rem; text-align:center;}
-    .services__grid {display:grid; grid-template-columns:1fr; gap:2rem;}
+    .services {
+      display: grid;
+      row-gap: 2rem;
+      padding: 2rem 1.5rem;
+      position: relative;
+    }
+    .services__title {
+      font-size: var(--h1-font-size);
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .services__grid {
+      display: grid; 
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
     .service-card {
       background-color: var(--first-color);
-      padding:2rem;
-      border-radius:.5rem;
-      text-align:center;
+      padding: 2rem;
+      border-radius: .5rem;
+      text-align: center;
       transition: transform .3s;
     }
-    .service-card:hover {transform: translateY(-5px);}
-    .service-card h2 {font-size: var(--h2-font-size); margin-bottom:1rem;}
-    .service-card p {font-size: var(--normal-font-size); line-height:1.5;}
+    .service-card: hover {
+      transform: translateY(-5px);
+    }
+    .service-card h2 {
+      font-size: var(--h2-font-size);
+      margin-bottom: 1rem;
+    }
+    .service-card p {
+      font-size: var(--normal-font-size);
+      line-height: 1.5;
+    }
 
     /* FLOATING SOCIALS */
     .services__social {
-      display:flex; flex-direction:column; position:fixed; left:1rem; top:50%; transform:translateY(-50%); z-index: var(--z-tooltip);
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%); 
+      z-index: var(--z-tooltip);
     }
-    .social-icon {margin-bottom:2rem; font-size:1.33rem; cursor:pointer; color:var(--white-color);}
-    .social-icon:hover {color: var(--first-color);}
+    .social-icon {
+      margin-bottom: 2rem; 
+      font-size: 1.33rem;
+      cursor: pointer;
+      color: var(--white-color);
+    }
+    .social-icon:hover {
+      color: var(--first-color);
+    }
 
     @media screen and (min-width:768px){
-      .services__grid {grid-template-columns:repeat(3,1fr);}
+      .services__grid {
+        grid-template-columns: repeat(3,1fr);
+      }
     }
 
   </style>
@@ -119,11 +188,21 @@
   <header class="l-header">
     <nav class="nav bd-grid">
       <ul class="nav__list" id="nav-menu">
-        <li class="nav__item"><a href="../index.html" class="nav__link">Home</a></li>
-        <li class="nav__item"><a href="../about/about.html" class="nav__link">About</a></li>
-        <li class="nav__item"><a href="./services.html" class="nav__link">Services</a></li>
-        <li class="nav__item"><a href="../blog/blog.html" class="nav__link">Blog</a></li>
-        <li class="nav__item"><a href="../contact/contact.html" class="nav__link">Contact</a></li>
+        <li class="nav__item">
+          <a href="../index.html" class="nav__link">Home</a>
+        </li>
+        <li class="nav__item">
+          <a href="../about/about.html" class="nav__link">About</a>
+        </li>
+        <li class="nav__item">
+          <a href="./services.html" class="nav__link">Services</a>
+        </li>
+        <li class="nav__item">
+          <a href="../blog/blog.html" class="nav__link">Blog</a>
+        </li>
+        <li class="nav__item">
+          <a href="../contact/contact.html" class="nav__link">Contact</a>
+        </li>
       </ul>
       <div class="nav__toggle" id="nav-toggle">
         <ion-icon name="menu"></ion-icon>
@@ -151,9 +230,15 @@
       </div>
 
       <div class="services__social">
-        <a href="https://www.linkedin.com/in/sihlegqeza/"><ion-icon name="logo-linkedin" class="social-icon"></ion-icon></a>
-        <a href="https://wa.me/+27622556751"><ion-icon name="logo-whatsapp" class="social-icon"></ion-icon></a>
-        <a href="https://www.facebook.com/sihle.gqeza.9"><ion-icon name="logo-facebook" class="social-icon"></ion-icon></a>
+        <a href="https://www.linkedin.com/in/sihlegqeza/">
+          <ion-icon name="logo-linkedin" class="social-icon"></ion-icon>
+        </a>
+        <a href="https://wa.me/+27622556751">
+          <ion-icon name="logo-whatsapp" class="social-icon"></ion-icon>
+        </a>
+        <a href="https://www.facebook.com/sihle.gqeza.9">
+          <ion-icon name="logo-facebook" class="social-icon"></ion-icon>
+        </a>
       </div>
     </section>
   </main>
@@ -170,9 +255,26 @@
     });
 
     // GSAP ANIMATION
-    gsap.from('.services__title', {opacity:0, duration:2, y:25, ease:'expo.out'});
-    gsap.from('.service-card', {opacity:0, duration:2, y:25, ease:'expo.out', stagger:0.3});
-    gsap.from('.social-icon', {opacity:0, duration:3, y:25, ease:'expo.out', stagger:0.2});
+    gsap.from('.services__title', {
+      opacity: 0, 
+      duration: 2, 
+      y: 25,
+      ease: 'expo.out'
+    });
+    gsap.from('.service-card', {
+      opacity: 0, 
+      duration:2, 
+      y: 25, 
+      ease: 'expo.out', 
+      stagger: 0.3
+    });
+    gsap.from('.social-icon', {
+      opacity: 0,
+      duration: 3,
+      y: 25,
+      ease: 'expo.out',
+      stagger: 0.2
+    });
   </script>
 
 </body>
